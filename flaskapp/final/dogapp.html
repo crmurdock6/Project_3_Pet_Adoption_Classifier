@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Adoption Predictor</title>
+</head>
+<style>
+p {
+    font-size: 26px;
+    font-weight: bold;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 24px;
+}
+button {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 24px;
+}
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    font-size: 24px;
+}
+</style>
+  <body>
+    <br><br>
+    <h1>Predicting Adoption</h1>
+    <br><br>
+    <div>
+    <p>Sex</p>
+    <select id="sexType">
+        <option value="1">select a sex</option>
+        <option value="2">Neutered Male</option>
+        <option value="3">Intact Male</option>
+        <option value="4">Spayed Female</option>
+        <option value="5">Intact Female</option>
+        <option value="6">Unknown</option>
+    </select>
+    <br>
+    <p>Age (Months)</p>
+    <input type="text" id="v2"></input>
+    <br>
+    <p>Breed</p>
+    <select id="breedType">
+        <option value="1">select a breed</option>
+        <option value="2">Dachshund</option>
+        <option value="3">Cardigan Welsh Corgi/Chihuahua Shorthair</option>
+        <option value="4">Dachshund Longhair Mix</option>
+        <option value="5">Pug Mix</option>
+        <option value="6">Redbone Hound Mix</option>
+        <option value="7">Maltese/Miniature Poodle</option>
+        <option value="8">Dachshund Wirehair Mix</option>
+        <option value="9">Norfolk Terrier Mix</option>
+        <option value="10">Carolina Dog Mix</option>
+        <option value="11">Anatol Shepherd Mix</option>
+        <option value="12">Great Dane Mix</option>
+        <option value="13">Plott Hound Mix</option>
+        <option value="14">American Pit Bull Terrier Mix</option>
+        <option value="15">English Bulldog Mix</option>
+        <option value="16">Cairn Terrier Mix</option>
+        <option value="17">Chihuahua Shorthair/Pug</option>
+        <option value="18">Chihuahua Shorthair/Jack Russell Terrier</option>
+        <option value="19">Mastiff Mix</option>
+        <option value="20">Miniature Poodle/Miniature Schnauzer</option>
+        <option value="21">Rhod Ridgeback Mix</option>
+        <option value="22">Great Pyrenees/Labrador Retriever</option>
+        <option value="23">Border Terrier Mix</option>
+        <option value="24">Chihuahua Longhair Mix</option>
+        <option value="25">Chihuahua Shorthair/Dachshund</option>
+        <option value="26">Lhasa Apso Mix</option>
+        <option value="27">Chihuahua Shorthair/Rat Terrier</option>
+        <option value="28">Toy Poodle Mix</option>
+        <option value="29">Miniature Poodle Mix</option>
+        <option value="30">Bull Terrier Mix</option>
+        <option value="31">Boxer</option>
+        <option value="32">Chinese Sharpei Mix</option>
+        <option value="33">Labrador Retriever/Pointer</option>
+        <option value="34">Maltese Mix</option>
+        <option value="35">Australian Kelpie Mix</option>
+        <option value="36">Flat Coat Retriever Mix</option>
+        <option value="37">Boxer/Labrador Retriever</option>
+        <option value="38">Yorkshire Terrier Mix</option>
+        <option value="39">American Staffordshire Terrier Mix</option>
+        <option value="40">Miniature Pinscher Mix</option>
+        <option value="41">Beagle</option>
+        <option value="42">Australian Shepherd/Labrador Retriever</option>
+        <option value="43">Black Mouth Cur Mix</option>
+        <option value="44">Doberman Pinsch Mix</option>
+        <option value="45">Boxer/Pit Bull</option>
+        <option value="46">Boston Terrier Mix</option>
+        <option value="47">Siberian Husky</option>
+        <option value="48">Miniature Poodle</option>
+        <option value="49">Shih Tzu Mix</option>
+        <option value="50">Basset Hound Mix</option>
+        <option value="51">Black/Tan Hound Mix</option>
+        <option value="52">Labrador Retriever/Rottweiler</option>
+        <option value="53">Border Collie/Labrador Retriever</option>
+        <option value="54">Rottweiler</option>
+        <option value="55">Collie Smooth Mix</option>
+        <option value="56">Boxer Mix</option>
+        <option value="57">Australian Cattle Dog Mix</option>
+        <option value="58">Queensland Heeler Mix</option>
+        <option value="59">American Bulldog Mix</option>
+        <option value="60">Australian Cattle Dog</option>
+        <option value="61">Shih Tzu</option>
+        <option value="62">Miniature Schnauzer</option>
+        <option value="63">Pomeranian Mix</option>
+        <option value="64">Manchester Terrier Mix</option>
+        <option value="65">Pekingese Mix</option>
+        <option value="66">Cardigan Welsh Corgi Mix</option>
+        <option value="67">German Shepherd</option>
+        <option value="68">Great Pyrenees Mix</option>
+        <option value="69">Chow Chow Mix</option>
+        <option value="70">Blue Lacy Mix</option>
+        <option value="71">Australian Cattle Dog/Labrador Retriever</option>
+        <option value="72">Catahoula Mix</option>
+        <option value="73">Cocker Spaniel Mix</option>
+        <option value="74">Pit Bull</option>
+        <option value="75">Labrador Retriever</option>
+        <option value="76">Pit Bull Mix</option>
+        <option value="77">Rottweiler Mix</option>
+        <option value="78">Golden Retriever Mix</option>
+        <option value="79">Beagle Mix</option>
+        <option value="80">Chow Chow/Labrador Retriever</option>
+        <option value="81">Siberian Husky Mix</option>
+        <option value="82">Australian Shepherd Mix</option>
+        <option value="83">Chihuahua Shorthair Mix</option>
+        <option value="84">Pointer Mix</option>
+        <option value="85">Harrier Mix</option>
+        <option value="86">Jack Russell Terrier Mix</option>
+        <option value="87">German Shepherd Mix</option>
+        <option value="88">Rat Terrier Mix</option>
+        <option value="89">Beagle/Labrador Retriever</option>
+        <option value="90">Labrador Retriever Mix</option>
+        <option value="91">Staffordshire Mix</option>
+        <option value="92">German Shepherd/Labrador Retriever</option>
+        <option value="93">Chihuahua Shorthair</option>
+        <option value="94">Border Collie Mix</option>
+        <option value="95">Dachshund Mix</option>
+        <option value="96">Miniature Schnauzer Mix</option>
+        <option value="97">Labrador Retriever/Pit Bull</option>
+        <option value="98">Other Purebred</option>
+        <option value="99">Other Mixed Breed</option>
+    </select>
+    <br>
+    <p>Color</p>
+    <select id="colorType">
+        <option value="1" selected>select a color</option>
+        <option value="2">Twocolor</option>
+        <option value="3">Tricolor</option>
+        <option value="4">Black</option>
+        <option value="5">Gold</option>
+        <option value="6">Merle</option>
+        <option value="7">Tan</option>
+        <option value="8">Cream</option>
+        <option value="9">Red</option>
+        <option value="10">White</option>
+        <option value="11">Brindle</option>
+        <option value="12">Brown</option>
+        <option value="13">Yellow</option>
+        <option value="14">Blue</option>
+        <option value="15">Chocolate</option>
+        <option value="16">Tick</option>
+        <option value="17">Apricot</option>
+        <option value="18">Gray</option>
+        <option value="19">Sable</option>
+        <option value="20">Buff</option>
+        <option value="21">Silver</option>
+        <option value="22">Fawn</option>
+        <option value="23">Orange</option>
+        <option value="24">Blue Merle</option>
+        <option value="25">Liver</option>
+        <option value="26">Agouti</option>
+        <option value="27">Brown Brindle</option>
+    </select>
+    <br>
+    <p>Intake Type</p>
+    <select id="intakeType">
+        <option value="1">select an intake type</option>
+        <option value="2">Public Assist</option>
+        <option value="3">Owner Surrender</option>
+        <option value="4">Stray</option>
+        <option value="5">Euthanasia Request</option>
+    </select>
+    <br>
+    <p>Intake Condition</p>
+    <select id="conditionType">
+        <option value="1">select a condition</option>
+        <option value="2">Normal</option>
+        <option value="3">Injured</option>
+        <option value="4">Aged</option>
+        <option value="5">Sick</option>
+        <option value="6">Pregnant</option>
+        <option value="7">Nursing</option>
+        <option value="8">Feral</option>
+        <option value="9">other</option>
+    </select>
+    <br>
+    <p>Time Spent at Shelter (Days)</p>
+    <input type="text" id="v7"></input>
+    <br>
+    <br>
+    <button id="button" onclick="adoptFunc()">Submit</button>
+    <br>
+    <p>Outcome: <div id="output">???</div></p>
+</div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script>
+
+
+function adoptFunc(){
+    var feat1 = document.getElementById("sexType");
+    var strUser1 = feat1.options[feat1.selectedIndex].text;
+
+    var feat2 = document.getElementById("v2").value;
+
+    var feat3 = document.getElementById("breedType");
+    var strUser3 = feat3.options[feat3.selectedIndex].text;
+
+    var feat4 = document.getElementById("colorType");
+    var strUser4 = feat4.options[feat4.selectedIndex].text;
+
+    var feat5 = document.getElementById("intakeType");
+    var strUser5 = feat5.options[feat5.selectedIndex].text;
+
+    var feat6 = document.getElementById("conditionType");
+    var strUser6 = feat6.options[feat6.selectedIndex].text;
+
+    var feat7 = document.getElementById("v7").value;
+    var outputParty = document.getElementById("output");
+
+  $.ajax({
+    type: "POST",
+    contentType: "application/json; charset=utf-8",
+    url: "/results",
+    dataType: "json",
+    async: true,
+    data: "{\"result\": [\""+strUser1+"\","+feat2+",\""+strUser3+"\",\""+strUser4+"\",\""+strUser5+"\",\""+strUser6+"\","+feat7+"]}",
+    success: function (results) {
+      predicted = results["outcome"];
+      var prob = 100 * predicted[1]
+      if (predicted[0] == 0) {
+          outputParty.textContent = 'Adopted! (' + prob.toFixed(1) + '%)'
+      } else {
+          outputParty.textContent = 'Not Adopted..... (' + (100-prob.toFixed(1)) + '%)'
+      }
+    },
+    error: function (result) {
+    }
+  })
+}
+
+    </script>
+  </body>
+</html>
